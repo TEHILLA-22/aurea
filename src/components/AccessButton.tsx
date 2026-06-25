@@ -3,7 +3,8 @@
 import { useState } from "react";
 
 const responses = [
-  "Nice try 😏",
+  "Unlock surprise",
+  "Nice try 😏, try again",
   "Still locked.",
   "Patience.",
   "Almost there.",

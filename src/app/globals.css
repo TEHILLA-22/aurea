@@ -336,3 +336,108 @@ body {
 .access-btn:active {
   transform: scale(.95);
 }
+
+.glitch-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: black;
+
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation:
+    glitchEnter 1.5s forwards;
+}
+
+.glitch-text {
+
+  font-size: clamp(2rem,7vw,5rem);
+
+  font-weight: 800;
+
+  letter-spacing: .2em;
+
+  color: white;
+
+  text-transform: uppercase;
+}
+
+@keyframes glitchEnter {
+
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+    background: white;
+    color: black;
+  }
+
+  20% {
+    background: black;
+  }
+
+  30% {
+    transform: translateX(-8px);
+  }
+
+  40% {
+    transform: translateX(8px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  60% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.confetti-wrapper {
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+}
+
+.confetti {
+
+  position: absolute;
+
+  width: 8px;
+  height: 14px;
+
+  background: white;
+
+  animation:
+    confettiFall 4s linear forwards;
+}
+
+@keyframes confettiFall {
+
+  from {
+    transform:
+      translateY(-100px)
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      translateY(110vh)
+      rotate(720deg);
+  }
+}
