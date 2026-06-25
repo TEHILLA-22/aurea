@@ -9,7 +9,7 @@ const responses = [
   "Patience.",
   "Almost there.",
   "Persistence detected.",
-  "Nope 😂",
+  "Nope 😂, almost time",
   "Keep waiting..."
 ];
 

@@ -441,3 +441,8 @@ body {
       rotate(720deg);
   }
 }
+
+.gift-box {
+  animation:
+    giftPulse 2s infinite;
+}
