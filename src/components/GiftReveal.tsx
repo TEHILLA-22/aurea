@@ -2,6 +2,12 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import {
+  Mail,
+  Sparkles,
+  Heart,
+} from "lucide-react";
 
 interface GiftRevealProps {
   onOpen: () => void;
@@ -12,9 +18,16 @@ export default function GiftReveal({
 }: GiftRevealProps) {
   const [opened, setOpened] = useState(false);
 
+  const router = useRouter();
+
   const handleOpen = () => {
-    setOpened(true);
-  };
+  setOpened(true);
+
+  const interval = setInterval(() => {
+    router.push("/birthday");
+    clearInterval(interval); // Clear it after first execution
+  }, 5000);
+};
 
   return (
     <div className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-black">
