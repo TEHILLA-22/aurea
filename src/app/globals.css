@@ -55,3 +55,211 @@ body {
     transform: translateY(0);
   }
 }
+
+
+.aurora {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(140px);
+
+  animation: drift 20s infinite alternate ease-in-out;
+
+  pointer-events: none;
+}
+
+.aurora-1 {
+  width: 600px;
+  height: 600px;
+
+  background: rgba(255, 93, 143, 0.18);
+
+  top: -150px;
+  left: -150px;
+}
+
+.aurora-2 {
+  width: 500px;
+  height: 500px;
+
+  background: rgba(143, 93, 255, 0.16);
+
+  bottom: -100px;
+  right: -100px;
+
+  animation-delay: 4s;
+}
+
+.aurora-3 {
+  width: 450px;
+  height: 450px;
+
+  background: rgba(255,255,255,0.06);
+
+  left: 40%;
+  top: 20%;
+
+  animation-delay: 8s;
+}
+
+@keyframes drift {
+  from {
+    transform:
+      translate(0,0)
+      scale(1);
+  }
+
+  to {
+    transform:
+      translate(100px,-60px)
+      scale(1.25);
+  }
+}
+
+.particles {
+  position: fixed;
+  inset: 0;
+}
+
+.particle {
+  position: absolute;
+
+  width: 2px;
+  height: 2px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  opacity: .6;
+
+  animation:
+    floatParticle 8s infinite ease-in-out;
+}
+
+@keyframes floatParticle {
+  50% {
+    transform:
+      translateY(-20px)
+      scale(1.6);
+  }
+}
+
+.countdown-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.content {
+  text-align: center;
+  z-index: 5;
+}
+
+.timer {
+  font-size: clamp(4rem, 11vw, 10rem);
+
+  letter-spacing: .1em;
+
+  font-weight: 800;
+
+  text-shadow:
+    0 0 30px rgba(255,93,143,.35),
+    0 0 80px rgba(255,93,143,.18);
+
+  animation: breathe 4s infinite;
+}
+
+@keyframes breathe {
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.message {
+  margin-top: 30px;
+
+  color: #c7c7c7;
+
+  font-size: 1.1rem;
+
+  min-height: 30px;
+
+  animation:
+    fadeMessage 4s infinite;
+}
+
+@keyframes fadeMessage {
+
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.heart {
+  position: fixed;
+
+  width: 12px;
+  height: 12px;
+
+  background: #ff5d8f;
+
+  transform: rotate(45deg);
+
+  pointer-events: none;
+
+  animation:
+    heartRise 2s forwards;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+
+  position: absolute;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: inherit;
+}
+
+.heart::before {
+  left: -6px;
+}
+
+.heart::after {
+  top: -6px;
+}
+
+@keyframes heartRise {
+  to {
+    transform:
+      translateY(-80px)
+      rotate(45deg)
+      scale(.2);
+
+    opacity: 0;
+  }
+}
