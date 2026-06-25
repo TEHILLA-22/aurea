@@ -446,3 +446,104 @@ body {
   animation:
     giftPulse 2s infinite;
 }
+
+.verification-page {
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.verification-card {
+
+  width: min(90%, 500px);
+
+  backdrop-filter: blur(18px);
+
+  background:
+    rgba(255,255,255,.05);
+
+  border:
+    1px solid rgba(
+      255,
+      255,
+      255,
+      .08
+    );
+
+  border-radius: 28px;
+
+  padding: 40px 24px;
+
+  text-align: center;
+
+  z-index: 2;
+}
+
+.verification-card h1 {
+
+  font-size: clamp(
+    2rem,
+    6vw,
+    3rem
+  );
+
+  margin: 20px 0;
+}
+
+.verification-label {
+
+  opacity: .6;
+
+  font-size: .8rem;
+
+  letter-spacing: .2em;
+
+  text-transform: uppercase;
+}
+
+.yes-btn {
+
+  margin-top: 24px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  padding: 14px 30px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+  color: black;
+
+  background: white;
+}
+
+.no-btn {
+
+  position: fixed;
+
+  border: none;
+
+  border-radius: 999px;
+
+  padding: 14px 28px;
+
+  cursor: pointer;
+
+  background:
+    rgba(255,255,255,.1);
+
+  color: white;
+
+  transition:
+    left .35s ease,
+    top .35s ease;
+}

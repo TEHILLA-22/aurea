@@ -2,50 +2,43 @@
 
 import { useEffect, useState } from "react";
 
+interface Props {
+  onComplete: () => void;
+}
+
 const messages = [
-  "UPDATING STATUS...",
-  "VERIFYING DATE...",
-  "CHECKING RECORD...",
-  "BIRTHDAY STATUS FOUND",
+  "🎉 System Ready",
+  "💖 Birthday Mode Activated",
+  "✨ Preparing surprise...",
+  "👀 Almost there...",
 ];
 
-export default function SystemActivation({
-  onComplete,
-}: {
-  onComplete: () => void;
-}) {
-
-  const [index, setIndex] = useState(0);
+export default function SystemActivation({ onComplete }: Props) {
+  const [i, setI] = useState(0);
 
   useEffect(() => {
-
-    if (index >= messages.length) {
-
-      const timer =
-        setTimeout(onComplete, 2000);
-
-      return () => clearTimeout(timer);
+    if (i >= messages.length) {
+      const t = setTimeout(onComplete, 1200);
+      return () => clearTimeout(t);
     }
 
-    const timer = setTimeout(() => {
-      setIndex(prev => prev + 1);
-    }, 1200);
-
-    return () => clearTimeout(timer);
-
-  }, [index, onComplete]);
+    const t = setTimeout(() => setI(i + 1), 900);
+    return () => clearTimeout(t);
+  }, [i, onComplete]);
 
   return (
-    <div className="activation-screen">
+    <div className="h-screen w-full flex flex-col items-center justify-center bg-black text-white relative overflow-hidden">
+      
+      {/* glow background */}
+      <div className="absolute w-[300px] h-[300px] bg-pink-500/20 blur-[120px] rounded-full animate-pulse" />
+      
+      <h1 className="text-3xl md:text-5xl font-bold text-center z-10 transition-all duration-300">
+        {messages[i]}
+      </h1>
 
-      {index < messages.length ? (
-        <h2>{messages[index]}</h2>
-      ) : (
-        <h1 className="birthday-active">
-          BIRTHDAY STATUS: ACTIVE
-        </h1>
-      )}
-
+      <p className="mt-6 text-white/60 z-10">
+        Welcome, Aurea ✨
+      </p>
     </div>
   );
 }

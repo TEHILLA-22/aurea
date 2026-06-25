@@ -4,6 +4,7 @@ interface CountdownProps {
   onComplete: () => void;
 }
 
+import { useEffect } from "react";
 import AuroraBackground from "./AuroraBackground";
 import FloatingParticles from "./FloatingParticles";
 import TypewriterMessages from "./TypewriterMessages";
@@ -17,8 +18,18 @@ export default function Countdown({
 }: CountdownProps) {
 
   const countdown = useCountdown(
-    new Date("2026-06-26T00:00:00")
+    // new Date("2026-06-26T00:00:00")
+    new Date(Date.now())
   );
+
+   useEffect(() => {
+    if (countdown.completed) {
+      onComplete();
+    }
+  }, [
+    countdown.completed,
+    onComplete,
+  ]);
 
   return (
     <main className="countdown-page">

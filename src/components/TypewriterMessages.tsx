@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const messages = [
   "Checking birthday status...",
   "Aurea detected.",
-  "Patience.",
+  "Feel the ecstasy.",
   "Contain excitement.",
   "Loading something special...",
   "One more sleep...",
