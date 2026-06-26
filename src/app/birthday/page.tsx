@@ -222,11 +222,7 @@ export default function BirthdayPage() {
           "
         >
           {/* Replace later with next/image */}
-          <img
-            src="/images/aurea-throwback.jpg"
-            alt="Aurea"
-            className="h-full w-full object-cover"
-          />
+          Ur image here
         </div>
 
         <div className="absolute inset-0 rounded-full ring-8 ring-pink-500/10" />
