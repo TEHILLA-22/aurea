@@ -172,6 +172,102 @@ export default function BirthdayPage() {
           <div className="h-10 w-[1px] bg-white/20" />
         </motion.div>
       </section>
+
+
+{/* ABOUT */}
+
+<section className="relative px-6 py-24">
+
+  <motion.div
+    initial={{ opacity: 0, y: 60 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8 }}
+    className="
+      mx-auto
+      max-w-6xl
+      rounded-[32px]
+      border
+      border-white/10
+      bg-white/5
+      p-6
+      backdrop-blur-2xl
+    "
+  >
+
+    <div className="mb-8 flex justify-center">
+      <span className="rounded-full border border-pink-400/20 bg-pink-500/10 px-4 py-2 text-xs tracking-[0.3em] text-pink-300 uppercase">
+        Memory 001
+      </span>
+    </div>
+
+    <div className="flex flex-col items-center gap-10 md:flex-row">
+
+      {/* PHOTO */}
+
+      <motion.div
+        whileHover={{ scale: 1.03 }}
+        className="relative"
+      >
+        <div
+          className="
+            h-72
+            w-72
+            overflow-hidden
+            rounded-full
+            border-4
+            border-white/10
+            bg-neutral-900
+            shadow-[0_0_60px_rgba(236,72,153,0.25)]
+          "
+        >
+          {/* Replace later with next/image */}
+          <img
+            src="/images/aurea-throwback.jpg"
+            alt="Aurea"
+            className="h-full w-full object-cover"
+          />
+        </div>
+
+        <div className="absolute inset-0 rounded-full ring-8 ring-pink-500/10" />
+      </motion.div>
+
+      {/* TEXT */}
+
+      <div className="flex-1 text-center md:text-left">
+
+        <h2 className="text-4xl font-black">
+          About Aurea
+        </h2>
+
+        <p className="mt-6 leading-8 text-white/70">
+
+          Every great story has a beginning.
+
+          <br />
+          <br />
+
+          This picture is a reminder that time changes many things,
+          but some qualities remain the same—your kindness, your
+          smile, and the joy you bring to the people around you.
+
+          <br />
+          <br />
+
+          Today is a celebration of how far you've come, the memories
+          you've created, and all the amazing moments still waiting
+          ahead.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </motion.div>
+
+</section>
+      
     </main>
   );
 }
